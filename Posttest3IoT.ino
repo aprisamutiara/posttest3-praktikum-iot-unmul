@@ -3,13 +3,13 @@
 #include <DHT.h> 
 
 // hotspot
-#define SSID "Infinix NOTE 30" //Hotspot yang dipakai
+#define SSID "Infinix NOTE 30"
 #define SSID_PASSWORD "2209106013"
 
 // konfig thinger
 #define USERNAME "juniververonikalili"
-#define DEVICE_ID "IOT_PRAK" // Lihat pada setting dari device yang sudah dibuat di thinger.io
-#define DEVICE_CREDENTIAL "8Liwa4!xvNCqXFYt" // Lihat pada setting dari device yang sudah dibuat di thinger.io (Generate random saja)
+#define DEVICE_ID "IOT_PRAK" 
+#define DEVICE_CREDENTIAL "8Liwa4!xvNCqXFYt" 
 
 // penggunaan pin
 #define DHT_PIN D4      // Pin DHT11
@@ -44,7 +44,6 @@ void setup() {
   
   // untuk membaca suhu di thinger
   thing["Suhu"] >> [](pson& out){
-    // float suhu_celcius = dht.readTemperature(); // Baca suhu dari sensor DHT
     suhu_fahrenheit = (suhu * 9 / 5) + 32; // Konversi ke Fahrenheit
     suhu_kelvin = suhu + 273; // Konversi ke Kelvin
 
